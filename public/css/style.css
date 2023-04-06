@@ -1,0 +1,9 @@
+#bg {
+    background-image: url("../img/bg.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-xsize: cover;
+    background-size: cover;
+    width: 70vw;
+    height: 70vh;
+}

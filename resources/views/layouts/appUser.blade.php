@@ -9,11 +9,13 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="https://unpkg.com/xlsx@0.15.1/dist/xlsx.full.min.js"></script>
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
     <!-- Scripts -->
@@ -22,7 +24,7 @@
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-secondary shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light bg-secondary shadow-sm d-flex  justify-content-between">
             <div class="container">
                 <a class="navbar-brand text-light" href="{{ url('/home') }}">
                     {{ config('app.name', 'Laravel') }}
@@ -40,6 +42,20 @@
                     </ul>
 
                     <!-- Right Side Of Navbar -->
+                    <div class="d-flex">
+                        <ul class="navbar-nav ms-auto">
+
+                            <li class="nav-item">
+                                <a class="nav-link text-light" href="home">{{ __('Home') }}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-light" href="chart">{{ __('Grafik') }}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-light" href="export">{{ __('Export') }}</a>
+                            </li>
+                        </ul>
+                    </div>
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
                         @guest

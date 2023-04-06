@@ -11,7 +11,7 @@
                         <a href="gudang_stok" class="list-group-item list-group-item-action">View Stok
                             Barang</a>
                         <a href="form_insert" class="list-group-item list-group-item-action">Insert</a>
-                        <a href="/log_active" class="list-group-item list-group-item-action">Log Activity</a>
+                        <a href="/log_active" class="list-group-item list-group-item-action active">Log Activity</a>
                     </div>
                 </div>
                 <div class="card-title" style="width: 20vw;">
@@ -26,11 +26,22 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    <center>
-                        <h1>Welcome {{ Auth::user()->name }}</h1>
-                    </center>
-
+                    <table class="table">
+                        <tr>
+                            <th scoper="col">Email</th>
+                            <th scoper="col">Username</th>
+                            <th scoper="col">role</th>
+                            <th scoper="col">last_login</th>
+                        </tr>
+                        @foreach ($act as $dt)
+                            <tr>
+                                <td>{{ $dt->email }}</td>
+                                <td>{{ $dt->username }}</td>
+                                <td>{{ $dt->role }}</td>
+                                <td>{{ $dt->last_login }}</td>
+                            </tr>
+                        @endforeach
+                    </table>
 
 
 

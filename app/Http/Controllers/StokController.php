@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\stok;
+use App\Models\activitas;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -53,8 +54,8 @@ class StokController extends Controller
     public function search(Request $request)
     {
         $search = $request->cari;
-        $stok = stok::where('nama_barang', 'like', '%'.$search.'%')->paginate(5);
-        return view('table', ['stok' => $stok]);
+        $stok = stok::where('satuan', 'like', '%'.$search.'%')->paginate(5);
+        return view('admin.table', ['stok' => $stok]);
     }
 
     public function delete($id)
@@ -76,4 +77,9 @@ class StokController extends Controller
         return redirect('gudang_stok')->with("status","Data anda telah diubah!");   
     }
 
+    public function log_activ(){
+        return view('admin.log',[
+            "act" => activitas::all()
+        ]);
+    }
 }

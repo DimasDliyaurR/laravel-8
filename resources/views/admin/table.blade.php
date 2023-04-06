@@ -10,7 +10,7 @@
                     <a href="gudang_stok" class="list-group-item list-group-item-action active">View Stok
                         Barang</a>
                     <a href="form_insert" class="list-group-item list-group-item-action">Insert</a>
-                    <a href="#" class="list-group-item list-group-item-action">Laporan Stok Barang</a>
+                    <a href="/log_active" class="list-group-item list-group-item-action">Log Activity</a>
                 </div>
             </div>
             <div class="card-title" style="width: 20vw;">
